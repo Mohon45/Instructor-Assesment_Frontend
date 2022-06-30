@@ -1,8 +1,6 @@
 import React from "react";
 
 const Create = (props) => {
-  const { toggle, target } = props;
-  console.log(toggle, target);
   return (
     <div>
       <button
