@@ -3,7 +3,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 const ConfirmationAlert = (submitHandler) => {
   confirmAlert({
-    title: "Confirm to Delete Cadidate?",
+    title: "Confirm to Delete Bill?",
     message: "Are you sure to do this.",
     buttons: [
       {
