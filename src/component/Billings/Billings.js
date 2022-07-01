@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import Pagination from "../../shared/Pagination/Pagination";
 import Create from "./Create";
 
 const Billings = () => {
-  const onToggleHandler = () => {
-    <Create />;
+  const [show, setShow] = useState(false);
+
+  const handleShow = (event) => {
+    event.preventDefault();
+    console.log("clicked");
+    setShow(true);
   };
+
+  //   const handleClose = () => setShow(false);
+
+  console.log(show);
   return (
     <div>
       <div>
@@ -43,14 +52,14 @@ const Billings = () => {
                 </form>
               </div>
               <div className="py-2">
-                {/* <Create /> */}
-                <button
-                  onClick={onToggleHandler}
+                <Button
+                  onClick={(event) => handleShow(event)}
                   className="btn btn-primary px-5"
                   type="submit"
                 >
                   Add New Bill
-                </button>
+                </Button>
+                <Create show={show} />
               </div>
             </div>
           </div>
@@ -74,7 +83,9 @@ const Billings = () => {
                 <td className="text-center">Otto</td>
                 <td className="text-center">Otto</td>
                 <td className="text-center">Otto</td>
-                <td className="text-center">@mdo</td>
+                <td className="text-center">
+                  <span>Edit</span> &nbsp; | &nbsp; <span>Delete</span>
+                </td>
               </tr>
               <tr>
                 <th className="text-center">1</th>
@@ -92,9 +103,7 @@ const Billings = () => {
                 <td className="text-center">Otto</td>
                 <td className="text-center">@mdo</td>
               </tr>
-              <div>
-                <Pagination />
-              </div>
+              <div>{/* <Pagination /> */}</div>
             </tbody>
           </table>
         </div>
